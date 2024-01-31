@@ -43,5 +43,18 @@ public class OrderResource {
 
 		throw new RuntimeException();
 	}
+
+	@DeleteMapping(value = "/{id}")
+	public ResponseEntity<Void> delete(@PathVariable Long id) {
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
+
+	/*
+	@PutMapping(value = "/{id}")
+	public ResponseEntity<Order> update(@PathVariable Long id, @RequestBody Order obj) {
+		obj = service.update(id, obj);
+		return ResponseEntity.ok().body(obj);
+	}*/
 	
  }
